@@ -1,4 +1,4 @@
-import Draggable, { DraggableCore } from "react-draggable";
+import Draggable from "react-draggable";
 import { Card, Button, FloatButton, Input } from "antd";
 import {
   QuestionCircleOutlined,
@@ -12,7 +12,10 @@ import { useMediaQuery } from "react-responsive";
 
 import "./style.css";
 const { Search } = Input;
-
+const eventHandler = (e, data) => {
+  console.log("Event Type", e.type);
+  console.log({ e, data });
+};
 export default function Dashboard() {
   const [url, setURL] = useState("");
   const [ytvisible, ytsetVisible] = useState(false);
@@ -30,7 +33,7 @@ export default function Dashboard() {
     <>
       {ytvisible && (
         <div>
-          <Draggable bounds="html">
+          <Draggable bounds="html" onStop={eventHandler}>
             <Card
               size="small"
               title="Youtube Player"
@@ -48,7 +51,7 @@ export default function Dashboard() {
                 onSearch={setURL}
                 enterButton
               />
-              {isDesktopOrLaptop && (
+              {isDesktopOrLaptop && url && (
                 <ReactPlayer
                   style={{
                     marginTop: "5%",
@@ -59,7 +62,7 @@ export default function Dashboard() {
                   width={"100%"}
                 />
               )}
-              {isTabletOrMobile && (
+              {isTabletOrMobile && url && (
                 <ReactPlayer
                   style={{
                     marginTop: "5%",
