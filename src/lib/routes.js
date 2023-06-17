@@ -4,5 +4,5 @@ import Dashboard from "pages/dashboard";
 export const ROOT = "/";
 
 export const router = createBrowserRouter([
-  { path: ROOT, element: <Dashboard /> }
+  { path: ROOT, element: <Dashboard /> },
 ]);
