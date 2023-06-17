@@ -48,7 +48,7 @@ export default function Dashboard() {
                 onSearch={setURL}
                 enterButton
               />
-              {isDesktopOrLaptop && (
+              {isDesktopOrLaptop && url && (
                 <ReactPlayer
                   style={{
                     marginTop: "5%",
@@ -59,7 +59,7 @@ export default function Dashboard() {
                   width={"100%"}
                 />
               )}
-              {isTabletOrMobile && (
+              {isTabletOrMobile && url && (
                 <ReactPlayer
                   style={{
                     marginTop: "5%",
