@@ -10,7 +10,3 @@ html {
   background-position: center;
   background-repeat: no-repeat;
 }
-.Draggable {
-  cursor: -webkit-grab;
-  cursor: grab;
-}
