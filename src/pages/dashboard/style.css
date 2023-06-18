@@ -55,3 +55,8 @@
 @media (min-width: 320px) and (max-width: 480px) {
   /* CSS */
 }
+
+.theme-switcher {
+  right: 24px;
+  position: absolute;
+}
