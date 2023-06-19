@@ -1,7 +1,7 @@
 import { Space, Switch, ConfigProvider, theme } from "antd";
 import YouTube from "widgets/youtube-player/YouTube";
 import SideWidget from "widgets/sidewidget/SideWidget";
-import PDFViewer from "widgets/pdf-viewer/PDFViewer";
+import Jokes from "widgets/jokes/Jokes";
 import React, { useState } from "react";
 import "./style.css";
 
@@ -34,7 +34,7 @@ export default function Dashboard() {
         </div>
 
         <YouTube ytshow={ytvisible} ythandler={handleyt} />
-        <PDFViewer />
+        <Jokes />
         <SideWidget ytshow={ytvisible} ythandler={handleyt} themehandler />
       </ConfigProvider>
     </>

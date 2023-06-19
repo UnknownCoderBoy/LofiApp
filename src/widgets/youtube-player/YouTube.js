@@ -42,6 +42,7 @@ export default function Youtube(props) {
           visibility: props.ytshow ? "visible" : "hidden",
           opacity: props.ytshow ? "1" : "0",
           transition: "all .2s",
+          width: isTabletOrMobile ? "300px" : "100%",
         }}
       >
         <Search
@@ -51,6 +52,9 @@ export default function Youtube(props) {
         />
         {isDesktopOrLaptop && linkdata.playable && (
           <ReactPlayer
+            config={{
+              youtube: { playerVars: { origin: "https://www.youtube.com" } },
+            }}
             style={{
               marginTop: "5%",
               margin: "auto",
@@ -60,8 +64,11 @@ export default function Youtube(props) {
             width={"100%"}
           />
         )}
-        {isTabletOrMobile && linkdata.playable && (
+        {isTabletOrMobile && isPortrait && linkdata.playable && (
           <ReactPlayer
+            config={{
+              youtube: { playerVars: { origin: "https://www.youtube.com" } },
+            }}
             style={{
               marginTop: "5%",
               margin: "auto",
@@ -69,7 +76,7 @@ export default function Youtube(props) {
             url={linkdata.url}
             controls={true}
             width={"100%"}
-            height={"250px"}
+            height={"180px"}
           />
         )}
       </Card>
