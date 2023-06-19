@@ -4,10 +4,10 @@ import PDFViewer from "pdf-viewer-reactjs";
 
 export default function PDFView() {
   return (
-    // <PDFViewer
-    //   document={{
-    //     url: FilePDF,
-    //   }}
-    // />
+    <PDFViewer
+      document={{
+        url: FilePDF,
+      }}
+    />
   );
 }
