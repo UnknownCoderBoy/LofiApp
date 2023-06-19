@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { SmileOutlined } from "@ant-design/icons";
 import { Button, notification } from "antd";
-import Emoji from "react-emoji-render";
 
 export default function Jokes() {
   const [jokedata, fetchjoke] = useState(
@@ -13,7 +12,7 @@ export default function Jokes() {
     fetchData();
     api.open({
       message: "Joke",
-      description: <Emoji>{jokedata}</Emoji>,
+      description: jokedata,
       icon: <SmileOutlined style={{ color: "#108ee9" }} />,
       placement: "top",
     });
@@ -28,7 +27,9 @@ export default function Jokes() {
   return (
     <>
       {contextHolder}
-      <Button type="primary" onClick={openNotification} shape="circle"></Button>
+      <Button onClick={openNotification} shape="circle">
+        <SmileOutlined />
+      </Button>
     </>
   );
 }

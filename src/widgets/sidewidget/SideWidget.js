@@ -6,6 +6,13 @@ import {
 } from "@ant-design/icons";
 
 export default function SideWidget(props) {
+  const handleyt = () => {
+    if (!props.closeyt) {
+      props.handlevisibleyt();
+    }
+    props.handlecloseyt(true);
+    props.handlevisibleyt();
+  };
   return (
     <FloatButton.Group shape="square">
       <FloatButton icon={<QuestionCircleOutlined />} />
@@ -14,7 +21,7 @@ export default function SideWidget(props) {
       <FloatButton
         icon={<YoutubeOutlined />}
         tooltip={<div>Toggle Youtube Player</div>}
-        onClick={props.ythandler}
+        onClick={handleyt}
       />
     </FloatButton.Group>
   );

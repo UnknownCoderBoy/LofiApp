@@ -6,12 +6,17 @@ import React, { useState } from "react";
 import "./style.css";
 
 export default function Dashboard() {
-  const [ytvisible, ytsetVisible] = useState(false);
+  const [visibleyt, setvisibleyt] = useState(false);
+  const [closeyt, setcloseyt] = useState(true);
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
-  const handleyt = () => {
-    ytsetVisible((prev) => !prev);
+  const handlevisibleyt = () => {
+    setvisibleyt((prev) => !prev);
+  };
+  const handlecloseyt = (data) => {
+    setcloseyt(data);
+    console.log("close: " + data);
   };
   return (
     <>
@@ -32,10 +37,21 @@ export default function Dashboard() {
             }}
           />
         </div>
+        <div className="joke">
+          <Jokes />
+        </div>
 
-        <YouTube ytshow={ytvisible} ythandler={handleyt} />
-        <Jokes />
-        <SideWidget ytshow={ytvisible} ythandler={handleyt} themehandler />
+        <YouTube
+          visibleyt={visibleyt}
+          handlevisibleyt={handlevisibleyt}
+          closeyt={closeyt}
+          handlecloseyt={handlecloseyt}
+        />
+        <SideWidget
+          handlevisibleyt={handlevisibleyt}
+          closeyt={closeyt}
+          handlecloseyt={handlecloseyt}
+        />
       </ConfigProvider>
     </>
   );
