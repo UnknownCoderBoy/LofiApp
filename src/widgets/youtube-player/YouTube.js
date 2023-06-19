@@ -67,7 +67,7 @@ export default function Youtube(props) {
             visibility: props.visibleyt ? "visible" : "hidden",
             opacity: props.visibleyt ? "1" : "0",
             transition: "all .2s",
-            width: isTabletOrMobile ? "300px" : "100%",
+            width: isTabletOrMobile ? "300px" : "50%",
           }}
         >
           <Search
