@@ -40,6 +40,8 @@ export default function Youtube(props) {
         style={{
           width: "50%",
           visibility: props.ytshow ? "visible" : "hidden",
+          opacity: props.ytshow ? "1" : "0",
+          transition: "all .2s",
         }}
       >
         <Search
