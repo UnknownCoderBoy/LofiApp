@@ -1,3 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap");
+
 .handle {
   cursor: move;
+}
+
+.weather {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+}
+.weather span {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  margin: auto;
+  font-weight: lighter;
 }

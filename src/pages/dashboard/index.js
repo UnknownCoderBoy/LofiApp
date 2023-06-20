@@ -3,6 +3,7 @@ import YouTube from "widgets/youtube-player/YouTube";
 import SideWidget from "widgets/sidewidget/SideWidget";
 import Jokes from "widgets/jokes/Jokes";
 import Spotify from "widgets/spotify/Spotify";
+import Weather from "widgets/weather/Weather";
 import React, { useState } from "react";
 import "./style.css";
 
@@ -38,6 +39,7 @@ export default function Dashboard() {
           algorithm: darkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
         }}
       >
+        <Weather />
         <div className="theme-switcher">
           <Switch
             size="small"
