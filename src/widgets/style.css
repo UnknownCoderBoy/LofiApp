@@ -4,15 +4,16 @@
   cursor: move;
 }
 
-.weather {
+.temperature {
   display: flex;
   width: fit-content;
   align-items: center;
   justify-content: center;
 }
-.weather span {
+.celsius {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   margin: auto;
-  font-weight: lighter;
+  font-size: 24px;
+  padding-right: 10px;
 }

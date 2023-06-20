@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import { Button, Row, Col, Card, Statistic } from "antd";
+import React, { useState, useEffect } from "react";
+import { Typography } from "antd";
 
 export default function Weather() {
+  const { Text } = Typography;
   const [weatherdata, fetchweather] = useState({});
+
   const fetchData = async () => {
     const API_KEY = "1b061b79c5539f8cafcbfdf517f257a2";
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=18.85&lon=73.88&units=metric&appid=${API_KEY}`;
@@ -24,15 +26,17 @@ export default function Weather() {
     });
     console.log(weatherdata.temp);
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <>
-      <Button onClick={fetchData} shape="circle">
-        W
-      </Button>
-      <div className="weather">
-        <span>
+      <div className="temperature">
+        <Text strong className="celsius">
           {weatherdata.temp} <span>&deg;</span> C
-        </span>
+        </Text>
         <img
           style={{
             width: "50px",

@@ -39,10 +39,12 @@ export default function Dashboard() {
           algorithm: darkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
         }}
       >
-        <Weather />
+        <div className="weather">
+          <Weather />
+        </div>
         <div className="theme-switcher">
           <Switch
-            size="small"
+            size="medium"
             checked={darkMode}
             checkedChildren="Dark"
             unCheckedChildren="Light"
