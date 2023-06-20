@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
-import { Card, Button, Input, Space, Divider } from "antd";
+import { Card, Button, Input, Space } from "antd";
 import { CloseOutlined, MinusOutlined, DragOutlined } from "@ant-design/icons";
 import Draggable from "react-draggable";
 import { useMediaQuery } from "react-responsive";
-import "./YouTube.css";
+import "widgets/style.css";
 
 const { Search } = Input;
 
@@ -17,13 +17,16 @@ export default function Youtube(props) {
       url: url,
       playable: ReactPlayer.canPlay(url),
     });
-    console.log(linkdata.playable);
   };
 
-  if (props.closeyt) {
-  } else {
-    linkdata.playable = false;
-  }
+  const handleclose = () => {
+    setURL({
+      ...linkdata,
+      url: "",
+      playable: ReactPlayer.canPlay(""),
+    });
+    props.handlecloseyt(false);
+  };
 
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
@@ -37,7 +40,7 @@ export default function Youtube(props) {
       <Draggable
         bounds="html"
         handle=".handle"
-        defaultPosition={{ x: 20, y: 160 }}
+        defaultPosition={{ x: 20, y: 20 }}
       >
         <Card
           size="small"
@@ -57,7 +60,7 @@ export default function Youtube(props) {
                 <Button
                   type="text"
                   icon={<CloseOutlined />}
-                  onClick={() => props.handlecloseyt(false)}
+                  onClick={handleclose}
                 />
               </Space>
             </>
