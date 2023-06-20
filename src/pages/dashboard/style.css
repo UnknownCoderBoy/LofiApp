@@ -54,11 +54,17 @@
 
 .theme-switcher {
   right: 24px;
+  top: 25px;
   position: absolute;
 }
 
 .joke {
   right: 24px;
-  top: 40px;
+  top: 70px;
+  position: absolute;
+}
+
+.weather {
+  right: 100px;
   position: absolute;
 }
