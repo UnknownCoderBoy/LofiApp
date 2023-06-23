@@ -46,13 +46,13 @@
 }
 .weather-app .weather-icon {
   font-size: 2.2em;
-  line-height: 2.8em;
+  line-height: 2.4em;
   content: "";
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   color: #fff;
   background: #444;
-  z-index: 1;
+  z-index: 0.5;
   border-radius: 40%;
   border: 3px solid #1e90ff;
   /*POSITION*/

@@ -30,7 +30,7 @@ export default function Spotify({
       <Draggable
         bounds="html"
         handle=".handle"
-        defaultPosition={{ x: 20, y: 20 }}
+        // defaultPosition={{ x: 20, y: 20 }}
       >
         <Card
           size="small"
