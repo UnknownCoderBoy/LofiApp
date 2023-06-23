@@ -4,6 +4,7 @@ import SideWidget from "widgets/sidewidget/SideWidget";
 import Jokes from "widgets/jokes/Jokes";
 import Spotify from "widgets/spotify/Spotify";
 import Weather from "widgets/weather/Weather";
+import Dictionary from "widgets/dictionary/Dictionary";
 import React, { useState } from "react";
 import "./style.css";
 
@@ -13,6 +14,8 @@ export default function Dashboard() {
 
   const [visiblesf, setvisiblesf] = useState(false);
   const [closesf, setclosesf] = useState(true);
+
+  const [visibledict, setvisibledict] = useState(false);
 
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
@@ -32,6 +35,10 @@ export default function Dashboard() {
     setclosesf(data);
   };
 
+  const handlevisibledict = () => {
+    setvisibledict((prev) => !prev);
+  };
+
   return (
     <>
       <ConfigProvider
@@ -39,9 +46,6 @@ export default function Dashboard() {
           algorithm: darkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
         }}
       >
-        <div className="weather">
-          <Weather />
-        </div>
         <div className="theme-switcher">
           <Switch
             size="medium"
@@ -54,21 +58,28 @@ export default function Dashboard() {
             }}
           />
         </div>
+        <div className="weather">
+          <Weather />
+        </div>
         <div className="joke">
           <Jokes />
         </div>
-        <Spotify
-          link="https://open.spotify.com/playlist/4dJSLiR8n2ZQUccpyXYKvE"
-          visiblesf={visiblesf}
-          handlevisiblesf={handlevisiblesf}
-          closesf={closesf}
-          handleclosesf={handleclosesf}
+        <Dictionary
+          visibledict={visibledict}
+          handlevisibledict={handlevisibledict}
         />
         <YouTube
           visibleyt={visibleyt}
           handlevisibleyt={handlevisibleyt}
           closeyt={closeyt}
           handlecloseyt={handlecloseyt}
+        />
+        <Spotify
+          link="https://open.spotify.com/playlist/4dJSLiR8n2ZQUccpyXYKvE"
+          visiblesf={visiblesf}
+          handlevisiblesf={handlevisiblesf}
+          closesf={closesf}
+          handleclosesf={handleclosesf}
         />
         <SideWidget
           handlevisibleyt={handlevisibleyt}
@@ -77,6 +88,7 @@ export default function Dashboard() {
           handlevisiblesf={handlevisiblesf}
           closesf={closesf}
           handleclosesf={handleclosesf}
+          handlevisibledict={handlevisibledict}
         />
       </ConfigProvider>
     </>

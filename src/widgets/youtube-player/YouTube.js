@@ -40,7 +40,7 @@ export default function Youtube(props) {
       <Draggable
         bounds="html"
         handle=".handle"
-        defaultPosition={{ x: 20, y: 20 }}
+        // defaultPosition={{ x: 20, y: 20 }}
       >
         <Card
           size="small"
@@ -66,7 +66,6 @@ export default function Youtube(props) {
             </>
           }
           style={{
-            width: "50%",
             visibility: props.visibleyt ? "visible" : "hidden",
             opacity: props.visibleyt ? "1" : "0",
             transition: "all .2s",

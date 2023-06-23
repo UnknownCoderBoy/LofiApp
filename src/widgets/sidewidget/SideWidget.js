@@ -23,10 +23,17 @@ export default function SideWidget(props) {
     props.handlevisiblesf();
   };
 
+  const handledict = () => {
+    props.handlevisibledict();
+  };
+
   return (
     <FloatButton.Group shape="square">
       <FloatButton icon={<QuestionCircleOutlined />} />
-      <FloatButton tooltip={<div>custom badge color</div>} />
+      <FloatButton
+        tooltip={<div>Toggle Dictionary</div>}
+        onClick={handledict}
+      />
       <FloatButton icon={<SyncOutlined />} />
       <FloatButton
         icon={<YoutubeOutlined />}
