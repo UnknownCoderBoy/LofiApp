@@ -14,12 +14,12 @@ export default function Weather() {
     console.log(data);
     const { name, weather } = data;
     const { temp, temp_min, temp_max } = data.main;
-    const { id, icon, main, description } = weather[0];
+    const { id, main, description, icon } = weather[0];
 
     fetchweather({
       ...weatherdata,
       name: name,
-      temp: temp,
+      temp: Math.trunc(temp),
       min_temp: temp_min,
       max_temp: temp_max,
       id: id,
@@ -86,7 +86,7 @@ export default function Weather() {
 
   return (
     <>
-      <div id="weather-app" className="weather-app">
+      <div className="weather-app">
         <i
           className={`weather-icon wi wi-fw ${classname()}${weatherdata.id}`}
         ></i>
@@ -103,11 +103,11 @@ export default function Weather() {
 
         <div className="location-weather">
           <div className="weather-status">
-            <div className="city">{weatherdata.main}</div>
+            <div className="city">{weatherdata.name}</div>
             <div className="forcast">{weatherdata.description}</div>
           </div>
           <div className="weather-temp">
-            <div className="temperature">{Math.trunc(weatherdata.temp)}</div>
+            <div className="temperature">{weatherdata.temp}</div>
             <div className="high-low">
               <div className="high">{weatherdata.max_temp}</div>
               <div className="low">{weatherdata.min_temp}</div>
