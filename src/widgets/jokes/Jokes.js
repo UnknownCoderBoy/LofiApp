@@ -8,8 +8,12 @@ export default function Jokes() {
   );
 
   const [api, contextHolder] = notification.useNotification();
-  const openNotification = () => {
-    fetchData();
+  const openNotification = async () => {
+    const url =
+      "https://hindi-jokes-api.onrender.com/jokes/?api_key=5a7b32b44725b9a69f271b79c763";
+    const response = await fetch(url);
+    const data = await response.json();
+    fetchjoke(data.jokeContent);
     api.open({
       message: "Joke",
       description: jokedata,
@@ -17,13 +21,7 @@ export default function Jokes() {
       placement: "top",
     });
   };
-  const fetchData = async () => {
-    const url =
-      "https://hindi-jokes-api.onrender.com/jokes/?api_key=5a7b32b44725b9a69f271b79c763";
-    const response = await fetch(url);
-    const data = await response.json();
-    fetchjoke(data.jokeContent);
-  };
+
   return (
     <>
       {contextHolder}
