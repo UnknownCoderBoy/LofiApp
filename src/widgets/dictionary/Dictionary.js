@@ -13,12 +13,10 @@ export default function Dictionary(props) {
   const handleSearch = async (inpWord) => {
     const response = await fetch(`${url}${inpWord}`);
     const data = await response.json();
-    console.log(data);
     const partOfSpeech = data[0].meanings[0].partOfSpeech;
     const phonetic = data[0].phonetic;
     const meaning = data[0].meanings[0].definitions[0].definition;
     const synonyms = data[0].meanings[0].definitions[0].synonyms;
-    console.log(synonyms);
     const example = data[0].meanings[0].definitions[0].example;
     const audiourl = data[0].phonetics[0].audio;
     const audio = new Audio(audiourl);
