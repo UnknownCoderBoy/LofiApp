@@ -11,7 +11,6 @@ export default function Weather() {
     const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${Location}&appid=${API_KEY}`;
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
     const { name, weather } = data;
     const { temp, temp_min, temp_max } = data.main;
     const { id, main, description, icon } = weather[0];
@@ -27,7 +26,6 @@ export default function Weather() {
       main: main,
       description: description,
     });
-    console.log(weatherdata.temp);
   };
 
   useEffect(() => {
