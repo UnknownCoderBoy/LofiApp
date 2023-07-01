@@ -29,12 +29,16 @@ export default function SideWidget(props) {
 
   return (
     <FloatButton.Group shape="square">
-      <FloatButton icon={<QuestionCircleOutlined />} />
+      <FloatButton
+        icon={<QuestionCircleOutlined />}
+        tooltip={<div>Info</div>}
+        onClick={props.showDrawer}
+      />
       <FloatButton
         tooltip={<div>Toggle Dictionary</div>}
         onClick={handledict}
       />
-      <FloatButton icon={<SyncOutlined />} />
+      {/* <FloatButton icon={<SyncOutlined />} /> */}
       <FloatButton
         icon={<YoutubeOutlined />}
         tooltip={<div>Toggle Youtube Player</div>}
