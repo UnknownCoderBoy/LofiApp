@@ -16,7 +16,10 @@ export default function Jokes() {
       description: jokedata,
       icon: <SmileOutlined style={{ color: "#108ee9" }} />,
       placement: "top",
-      duration: 0,
+      duration: 5,
+      style: {
+        cursor: "auto",
+      },
       onClose: () => {
         setshowjoke(true);
       },
