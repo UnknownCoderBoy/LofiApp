@@ -107,6 +107,7 @@ export default function Dashboard() {
         placement="right"
         onClose={onClose}
         open={open}
+        style={{ cursor: "auto" }}
       >
         <p>
           <b>YouTube Player:</b> Integrating a YouTube player that allows users
