@@ -57,6 +57,7 @@ export default function Dictionary(props) {
         // defaultPosition={{ x: 20, y: 20 }}
       >
         <Card
+          className="glassmor"
           size="small"
           title="Dictionary"
           extra={

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Card, Button, Input, Space } from "antd";
 import { CloseOutlined, MinusOutlined, DragOutlined } from "@ant-design/icons";
 import Draggable from "react-draggable";
-import "widgets/style.css";
 
 export default function Spotify({
   link,
@@ -33,6 +32,7 @@ export default function Spotify({
         // defaultPosition={{ x: 20, y: 20 }}
       >
         <Card
+          className="glassmor"
           size="small"
           title="Spotify"
           extra={

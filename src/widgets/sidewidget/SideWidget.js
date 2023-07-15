@@ -30,21 +30,25 @@ export default function SideWidget(props) {
   return (
     <FloatButton.Group shape="square">
       <FloatButton
+        className="glassmor"
         icon={<QuestionCircleOutlined />}
         tooltip={<div>Info</div>}
         onClick={props.showDrawer}
       />
       <FloatButton
+        className="glassmor"
         tooltip={<div>Toggle Dictionary</div>}
         onClick={handledict}
       />
       {/* <FloatButton icon={<SyncOutlined />} /> */}
       <FloatButton
+        className="glassmor"
         icon={<YoutubeOutlined />}
         tooltip={<div>Toggle Youtube Player</div>}
         onClick={handleyt}
       />
       <FloatButton
+        className="glassmor"
         icon={<PlayCircleOutlined />}
         tooltip={<div>Toggle Spotify</div>}
         onClick={handlesf}

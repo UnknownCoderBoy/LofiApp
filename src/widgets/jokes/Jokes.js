@@ -35,7 +35,7 @@ export default function Jokes() {
     <>
       {contextHolder}
       {showjoke && (
-        <Button onClick={openNotification} shape="circle">
+        <Button className="glassmorc" onClick={openNotification} shape="circle">
           <SmileOutlined />
         </Button>
       )}
