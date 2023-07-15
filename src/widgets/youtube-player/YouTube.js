@@ -4,7 +4,6 @@ import { Card, Button, Input, Space } from "antd";
 import { CloseOutlined, MinusOutlined, DragOutlined } from "@ant-design/icons";
 import Draggable from "react-draggable";
 import { useMediaQuery } from "react-responsive";
-import "widgets/style.css";
 
 const { Search } = Input;
 
@@ -43,6 +42,7 @@ export default function Youtube(props) {
         // defaultPosition={{ x: 20, y: 20 }}
       >
         <Card
+          className="glassmor"
           size="small"
           title="Youtube Player"
           extra={
