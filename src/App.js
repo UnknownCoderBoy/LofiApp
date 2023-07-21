@@ -9,11 +9,11 @@ export default function App() {
       <RouterProvider router={router} />
       <AnimatedCursor
         innerSize={10}
-        outerSize={10}
+        outerSize={18}
         color="193, 11, 111"
         outerAlpha={0.4}
-        innerScale={0.7}
-        outerScale={5}
+        innerScale={0.8}
+        outerScale={2}
         style={{
           zIndex: "200",
         }}

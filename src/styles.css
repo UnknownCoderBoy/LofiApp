@@ -9,6 +9,7 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  cursor: none;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap");
@@ -88,7 +89,6 @@ html {
   font-weight: bold;
   font-size: 1.25em;
   line-height: 0.9em;
-  cursor: pointer;
 }
 .weather-app .location-weather .forcast {
   font-size: 0.9em;
